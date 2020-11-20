@@ -1,5 +1,6 @@
 name: css_lighthouse
 baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://johnny-zou.github.io/css_lighthouse/"
 
 exclude: ["README.md", "debug.yml"]
 sass:
