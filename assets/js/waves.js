@@ -5,7 +5,7 @@ function createWave(wavebox,windowHeight,windowWidth){
 	var color_base = [233,243,246];
 	var color = color_base.map( (x,id) => x + color_variation[id]);
 	var left = Math.floor(Math.random()*windowWidth);
-	var bottom = Math.floor(Math.random()*(windowHeight*0.28));
+	var bottom = Math.floor(Math.random()*(windowHeight*0.8)) + 0.1*windowHeight;
 	var height = Math.floor(Math.random()*2) + 2;
 	var width = Math.floor(Math.random()*200) + 25;
 	var animation_len = Math.floor(Math.random()*2000) + 8000;
@@ -30,8 +30,8 @@ function createWave(wavebox,windowHeight,windowWidth){
 
 function animate_waves(){
 	var wavebox = document.getElementById("wavebox");
-	var windowHeight = window.innerHeight;
-	var windowWidth = window.innerWidth;
+	var windowHeight = wavebox.offsetHeight;
+	var windowWidth = wavebox.offsetWidth;
 
 	var num_wave = 5;
 
@@ -40,9 +40,9 @@ function animate_waves(){
 	}
 	
 	(function loop() {
-	    var rand = Math.round(Math.random() * 2000) + 8000;
+	    var rand = Math.round(Math.random() * 1000) + 2000;
 	    setTimeout(function() {
-	    	var num_wave = Math.floor(Math.random()*5);
+	    	var num_wave = Math.floor(Math.random()*3) + 1;
 
 	    	for(var i = 0; i < num_wave; i++){
             	createWave(wavebox,windowHeight,windowWidth);

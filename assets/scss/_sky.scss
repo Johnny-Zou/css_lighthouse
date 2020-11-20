@@ -22,6 +22,7 @@
 	width: 100vw;
 	height: calc(60vh + 75px);
 	background: $color_sky;
+	overflow: hidden;
 
 	#starbox{
 		position: absolute;

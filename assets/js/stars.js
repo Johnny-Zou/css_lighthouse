@@ -5,7 +5,7 @@ function createStar(skybox,windowHeight,windowWidth){
 	var color_base = [233,243,246];
 	var color = color_base.map( (x,id) => x + color_variation[id]);
 	var left = Math.floor(Math.random()*windowWidth);
-	var top = Math.floor(Math.random()*(windowHeight*0.6));
+	var top = Math.floor(Math.random()*(windowHeight*0.9)) + windowHeight * 0.1;
 	var length = Math.floor(Math.random()*2) + 2;
 	var animation_len = Math.floor(Math.random()*1000) + 2000;
 
@@ -27,8 +27,8 @@ function createStar(skybox,windowHeight,windowWidth){
 
 function animate_stars(){
 	var skybox = document.getElementById("starbox");
-	var windowHeight = window.innerHeight;
-	var windowWidth = window.innerWidth;
+	var windowHeight = skybox.offsetHeight;
+	var windowWidth = skybox.offsetWidth;
 
 	var num_star = 15;
 
