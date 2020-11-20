@@ -1,0 +1,23 @@
+---
+---
+$baseurl: "{{ site.baseurl }}";
+
+@import "colors";
+@import "lighthouse";
+@import "sky";
+@import "water";
+@import "rocks";
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body{
+	overflow: hidden;
+}
+
+.bye {
+	display: none;
+}

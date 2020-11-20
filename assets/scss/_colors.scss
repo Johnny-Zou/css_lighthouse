@@ -1,0 +1,27 @@
+// lighthouse
+$color_lightHouse_light_inner: #f8f2b6;
+$color_lightHouse_light_outter: darken($color_lightHouse_light_inner,20%);
+$color_lightHouse_light_grad_inner: linear-gradient(to left, $color_lightHouse_light_inner, transparent 70%);
+// $color_lightHouse_light_rad_grad: radial-gradient($color_lightHouse_light_inner, transparent 70%);
+$color_lightHouse_light_grad_outter: linear-gradient(to left, $color_lightHouse_light_outter, transparent 70%);
+
+$color_lightHouse_top_dome: #1d2b42;
+$color_lightHouse_top_base: #16213e;
+$color_lightHouse_mid: #c7d4da;
+$color_lightHouse_red: #6e3432;
+$color_lightHouse_base: #2f2649;
+
+// Rocks
+$color_rock_0: linear-gradient(to top, darken(#406297,5%), lighten(#416296,10%));
+$color_rock_1: linear-gradient(to top, #3c4d79, #2f5a90);
+$color_rock_2: linear-gradient(to top, #345485, lighten(#345485,15%));
+$color_rock_3: linear-gradient(to top, darken(#3b4c7a,20%), #3b4c7a);
+$color_rock_4: linear-gradient(to top, darken(#315b8f,10%), lighten(#394570,5%));
+
+
+
+// sky
+$color_sky: linear-gradient(to top, #5f61b0, darken(#323159,15%));
+
+// water
+$color_water: radial-gradient(ellipse 100vw 130% at 50% -50%, #75d8f7, #7180e4, #2e2c50);

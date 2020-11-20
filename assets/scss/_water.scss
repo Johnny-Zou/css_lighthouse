@@ -1,0 +1,39 @@
+@keyframes wave_move{
+	
+	0% {
+		transform: translateX(0px);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateX(20px);
+		opacity: 0.8;
+	}
+
+	100% {
+		transform: translateX(40px);
+		opacity: 0;
+	}
+}
+
+.water {
+	position: absolute;
+	z-index: -25;
+	width: 100vw;
+	bottom: 0px;
+	height: calc(40vh - 75px);
+	background: $color_water;
+
+	#wavebox{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: -20;
+		.wave{
+			opacity: 0;
+			position: absolute;
+			animation-name: wave_move;
+			animation-timing-function: linear;
+		}
+	}
+}

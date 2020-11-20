@@ -1,0 +1,219 @@
+@import "colors";
+@import "trig";
+
+$light_width: 1000px;
+$light_deg: 10deg;
+$light_offset: 0.13;
+$light_height: $light-width * tan($light_deg) * 2;
+
+
+@keyframes light_spin{
+	
+	0% {
+		transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(0deg);
+		z-index: 10;
+	}
+
+	20% {
+		transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(90deg);
+		z-index: 10;
+	}
+
+	40% {
+		transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(180deg);
+		z-index: -10;
+	}
+
+	60% {
+		transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(270deg);
+		z-index: -10;
+	}
+
+	100% {
+		z-index: -10;
+		transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(360deg);
+	}
+}
+
+.lightHouse_lights{
+    position: absolute;
+    left: 50%;
+    top: calc(60vh - 222px);
+
+    width: $light_width;
+    height: $light_height;
+    transform-origin: right;
+    transform-style: preserve-3d;
+    transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(45deg);
+    // spin animation
+    animation-name: light_spin;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    .trapazoid_front, .trapazoid_top, .trapazoid_back, .trapazoid_bottom{
+    	.outter_side{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			backface-visibility: hidden;
+			clip-path: polygon(0 0, 0% 100%, 100% 50%);
+			background: $color_lightHouse_light_grad_outter;
+			
+		}
+		.inner_side{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			backface-visibility: hidden;
+			clip-path: polygon(0 0, 0% 100%, 100% 50%);
+			background: $color_lightHouse_light_grad_inner;
+		}
+    }
+    .trapazoid_top, .trapazoid_front{
+		.inner_side{
+			transform: rotateX(180deg);
+		}
+	}
+	.trapazoid_back, .trapazoid_bottom{
+		.outter_side{
+			transform: rotateX(180deg);
+		}
+	}
+
+	.trapazoid_front{
+		position: absolute;
+		width: $light_width;
+		height: $light_height;
+		transform: rotateY($light_deg + $light_offset);
+		transform-origin: right;
+		transform-style: preserve-3d;
+	}
+	.trapazoid_top{
+		position: absolute;
+		width: $light_width;
+		height: $light_height;
+		transform: rotateX(90deg) rotateY($light_deg + $light_offset);
+		transform-origin: right;
+		transform-style: preserve-3d;
+
+	}
+	.trapazoid_back{
+		position: absolute;
+		width: $light_width;
+		height: $light_height;
+		transform: rotateY(-$light_deg - $light_offset);
+		transform-origin: right;
+		transform-style: preserve-3d;
+
+	}
+	.trapazoid_bottom{
+		position: absolute;
+		width: $light_width;
+		height: $light_height;
+		transform: rotateX(90deg) rotateY(-$light_deg - $light_offset);
+		transform-origin: right;
+		transform-style: preserve-3d;
+
+	}
+}
+.lightHouse{
+	position: absolute;
+	top: 60vh;
+	left: 50%;
+	transform: translate(-50%,-115%);
+	perspective: 150px;
+	z-index: 0;
+
+	.lightHouse_perspectiveWrap{
+		transform: rotateX(20deg);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.top{
+		width: 40px;
+		height: 80px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.top__top{
+		    width: 50%;
+		    height: 20%;
+		    background-color: $color_lightHouse_top_dome;
+		    border-top-left-radius: 100% 250%;
+		    border-top-right-radius: 100% 250%;
+			border-bottom: 0;
+		}
+		.top__middle{
+			opacity: 0.7;
+			width: 50%;
+			height: 30%;
+			background-color: $color_lightHouse_light_inner;
+		}
+		.top__bottom{
+			width: 50%;
+			height: 15%;
+			background-color: $color_lightHouse_top_base;
+		}
+		.top__base{
+			width: 150%;
+			height: 35%;
+			background-color: $color_lightHouse_top_base;
+			clip-path: polygon(0 0, 100% 1%, 90% 100%, 10% 100%);
+		}
+	}
+	.mid{
+		width: 40px;
+		height: 100px;
+		display: flex;
+		flex-direction: row;
+
+		.window{
+			position: absolute;
+			background-color: black;
+			height: 10px;
+			width: 5px;
+			&.window--top{
+			    left: calc(50% + 5px);
+			    top: calc(50% + -2px);
+			}
+			&.window--bottom{
+			    left: calc(50% - 10px);
+			    top: calc(50% + 35px);
+			}
+		}
+		.mid__left, .mid__right{
+			width: 30%;
+			height: 100%;
+			background-color: lighten($color_lightHouse_mid,10%);
+		}
+		.mid__mid{
+			width: 40%;
+			height: 100%;
+			background-color: $color_lightHouse_mid;
+		}
+	}
+	.redBottom{
+		width: 40px;
+		height: 40px;
+		display: flex;
+		flex-direction: row;
+		.redBottom__left, .redBottom__right{
+			width: 30%;
+			height: 100%;
+			background-color: lighten($color_lightHouse_red,10%);
+		}
+		.redBottom__mid{
+			width: 40%;
+			height: 100%;
+			background-color: $color_lightHouse_red;
+		}
+	}
+	.base{
+		transform: translateY(-5%) rotateX(20deg);
+		width: 100px;
+		height: 15px;
+		background-color: $color_lightHouse_base;
+	}
+}

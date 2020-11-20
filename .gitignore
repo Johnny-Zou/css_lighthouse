@@ -1,0 +1,4 @@
+#ignore these
+.sass-cache/
+_site/
+.git/
