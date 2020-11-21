@@ -7,31 +7,70 @@ $light_offset: 0.13;
 $light_height: $light-width * tan($light_deg) * 2;
 
 
-@keyframes light_spin{
+@-webkit-keyframes light_spin{
 	
 	0% {
-		transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(0deg);
+		-webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(0deg);
+		        transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(0deg);
 		z-index: 10;
 	}
 
 	20% {
-		transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(90deg);
+		-webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(90deg);
+		        transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(90deg);
 		z-index: 10;
 	}
 
 	40% {
-		transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(180deg);
+		-webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(180deg);
+		        transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(180deg);
 		z-index: -10;
 	}
 
 	60% {
-		transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(270deg);
+		-webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(270deg);
+		        transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(270deg);
 		z-index: -10;
 	}
 
 	100% {
 		z-index: -10;
-		transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(360deg);
+		-webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(360deg);
+		        transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(360deg);
+	}
+}
+
+
+@keyframes light_spin{
+	
+	0% {
+		-webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(0deg);
+		        transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(0deg);
+		z-index: 10;
+	}
+
+	20% {
+		-webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(90deg);
+		        transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(90deg);
+		z-index: 10;
+	}
+
+	40% {
+		-webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(180deg);
+		        transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(180deg);
+		z-index: -10;
+	}
+
+	60% {
+		-webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(270deg);
+		        transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(270deg);
+		z-index: -10;
+	}
+
+	100% {
+		z-index: -10;
+		-webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(360deg);
+		        transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(360deg);
 	}
 }
 
@@ -42,22 +81,34 @@ $light_height: $light-width * tan($light_deg) * 2;
 
     width: $light_width;
     height: $light_height;
-    transform-origin: right;
-    transform-style: preserve-3d;
-    transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(45deg);
-    // spin animation
-    animation-name: light_spin;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(45deg);
+            transform: translate3d(-$light_width,-50%,-$light_width) rotateX(-5deg) rotateY(45deg);
+
+
+    // Spin Animation
+    -webkit-animation-name: light_spin;
+            animation-name: light_spin;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
 
     .trapazoid_front, .trapazoid_top, .trapazoid_back, .trapazoid_bottom{
     	.outter_side{
 			position: absolute;
 			height: 100%;
 			width: 100%;
-			backface-visibility: hidden;
-			clip-path: polygon(0 0, 0% 100%, 100% 50%);
+			-webkit-backface-visibility: hidden;
+			        backface-visibility: hidden;
+			-webkit-clip-path: polygon(0 0, 0% 100%, 100% 50%);
+			        clip-path: polygon(0 0, 0% 100%, 100% 50%);
 			background: $color_lightHouse_light_grad_outter;
 			
 		}
@@ -65,19 +116,23 @@ $light_height: $light-width * tan($light_deg) * 2;
 			position: absolute;
 			height: 100%;
 			width: 100%;
-			backface-visibility: hidden;
-			clip-path: polygon(0 0, 0% 100%, 100% 50%);
+			-webkit-backface-visibility: hidden;
+			        backface-visibility: hidden;
+			-webkit-clip-path: polygon(0 0, 0% 100%, 100% 50%);
+			        clip-path: polygon(0 0, 0% 100%, 100% 50%);
 			background: $color_lightHouse_light_grad_inner;
 		}
     }
     .trapazoid_top, .trapazoid_front{
 		.inner_side{
-			transform: rotateX(180deg);
+			-webkit-transform: rotateX(180deg);
+			        transform: rotateX(180deg);
 		}
 	}
 	.trapazoid_back, .trapazoid_bottom{
 		.outter_side{
-			transform: rotateX(180deg);
+			-webkit-transform: rotateX(180deg);
+			        transform: rotateX(180deg);
 		}
 	}
 
@@ -85,35 +140,51 @@ $light_height: $light-width * tan($light_deg) * 2;
 		position: absolute;
 		width: $light_width;
 		height: $light_height;
-		transform: rotateY($light_deg + $light_offset);
-		transform-origin: right;
-		transform-style: preserve-3d;
+		-webkit-transform: rotateY($light_deg + $light_offset);
+		        transform: rotateY($light_deg + $light_offset);
+		-webkit-transform-origin: right;
+		    -ms-transform-origin: right;
+		        transform-origin: right;
+		-webkit-transform-style: preserve-3d;
+		        transform-style: preserve-3d;
 	}
 	.trapazoid_top{
 		position: absolute;
 		width: $light_width;
 		height: $light_height;
-		transform: rotateX(90deg) rotateY($light_deg + $light_offset);
-		transform-origin: right;
-		transform-style: preserve-3d;
+		-webkit-transform: rotateX(90deg) rotateY($light_deg + $light_offset);
+		        transform: rotateX(90deg) rotateY($light_deg + $light_offset);
+		-webkit-transform-origin: right;
+		    -ms-transform-origin: right;
+		        transform-origin: right;
+		-webkit-transform-style: preserve-3d;
+		        transform-style: preserve-3d;
 
 	}
 	.trapazoid_back{
 		position: absolute;
 		width: $light_width;
 		height: $light_height;
-		transform: rotateY(-$light_deg - $light_offset);
-		transform-origin: right;
-		transform-style: preserve-3d;
+		-webkit-transform: rotateY(-$light_deg - $light_offset);
+		        transform: rotateY(-$light_deg - $light_offset);
+		-webkit-transform-origin: right;
+		    -ms-transform-origin: right;
+		        transform-origin: right;
+		-webkit-transform-style: preserve-3d;
+		        transform-style: preserve-3d;
 
 	}
 	.trapazoid_bottom{
 		position: absolute;
 		width: $light_width;
 		height: $light_height;
-		transform: rotateX(90deg) rotateY(-$light_deg - $light_offset);
-		transform-origin: right;
-		transform-style: preserve-3d;
+		-webkit-transform: rotateX(90deg) rotateY(-$light_deg - $light_offset);
+		        transform: rotateX(90deg) rotateY(-$light_deg - $light_offset);
+		-webkit-transform-origin: right;
+		    -ms-transform-origin: right;
+		        transform-origin: right;
+		-webkit-transform-style: preserve-3d;
+		        transform-style: preserve-3d;
 
 	}
 }
@@ -121,22 +192,40 @@ $light_height: $light-width * tan($light_deg) * 2;
 	position: absolute;
 	top: 60vh;
 	left: 50%;
-	transform: translate(-50%,-115%);
-	perspective: 150px;
+	-webkit-transform: translate(-50%,-115%);
+	    -ms-transform: translate(-50%,-115%);
+	        transform: translate(-50%,-115%);
+	-webkit-perspective: 150px;
+	        perspective: 150px;
 	z-index: 0;
 
 	.lightHouse_perspectiveWrap{
-		transform: rotateX(20deg);
+		-webkit-transform: rotateX(20deg);
+		        transform: rotateX(20deg);
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction: column;
-		align-items: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 	}
 	.top{
 		width: 40px;
 		height: 80px;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction: column;
-		align-items: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 		.top__top{
 		    width: 50%;
 		    height: 20%;
@@ -160,14 +249,20 @@ $light_height: $light-width * tan($light_deg) * 2;
 			width: 150%;
 			height: 35%;
 			background-color: $color_lightHouse_top_base;
-			clip-path: polygon(0 0, 100% 1%, 90% 100%, 10% 100%);
+			-webkit-clip-path: polygon(0 0, 100% 1%, 90% 100%, 10% 100%);
+			        clip-path: polygon(0 0, 100% 1%, 90% 100%, 10% 100%);
 		}
 	}
 	.mid{
 		width: 40px;
 		height: 100px;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction: row;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
 
 		.window{
 			position: absolute;
@@ -197,8 +292,13 @@ $light_height: $light-width * tan($light_deg) * 2;
 	.redBottom{
 		width: 40px;
 		height: 40px;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction: row;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
 		.redBottom__left, .redBottom__right{
 			width: 30%;
 			height: 100%;
@@ -211,7 +311,8 @@ $light_height: $light-width * tan($light_deg) * 2;
 		}
 	}
 	.base{
-		transform: translateY(-5%) rotateX(20deg);
+		-webkit-transform: translateY(-5%) rotateX(20deg);
+		        transform: translateY(-5%) rotateX(20deg);
 		width: 100px;
 		height: 15px;
 		background-color: $color_lightHouse_base;
