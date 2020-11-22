@@ -42,6 +42,7 @@
 	height: calc(40vh - 75px);
 	overflow: hidden;
 	background: $color_water;
+	transform: translateZ(-2000px);
 
 	#wavebox{
 		position: absolute;

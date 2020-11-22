@@ -7,9 +7,9 @@
 	display: flex;
 	left: 50%;
 	top: 60vh;
-	-webkit-transform: translate(-50%,-10px);
-	    -ms-transform: translate(-50%,-10px);
-	        transform: translate(-50%,-10px);
+	-webkit-transform: translate3d(-50%,-10px,-1500px);
+	    -ms-transform: translate3d(-50%,-10px,-1500px);
+	        transform: translate3d(-50%,-10px,-1500px);
 	z-index: -5;
 	width: 80vw;
 	max-width: 1000px;

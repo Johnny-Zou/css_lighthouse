@@ -1,9 +1,9 @@
 // lighthouse
 $color_lightHouse_light_inner: #f8f2b6;
 $color_lightHouse_light_outter: darken($color_lightHouse_light_inner,20%);
-$color_lightHouse_light_grad_inner: linear-gradient(to left, $color_lightHouse_light_inner, transparent 70%);
-// $color_lightHouse_light_rad_grad: radial-gradient($color_lightHouse_light_inner, transparent 70%);
-$color_lightHouse_light_grad_outter: linear-gradient(to left, $color_lightHouse_light_outter, transparent 70%);
+$color_lightHouse_light_grad_inner: linear-gradient(to left, $color_lightHouse_light_inner, rgba(255,255,255,0) 70%);
+// $color_lightHouse_light_rad_grad: radial-gradient($color_lightHouse_light_inner, rgba(255,255,2550) 70%);
+$color_lightHouse_light_grad_outter: linear-gradient(to left, $color_lightHouse_light_outter, rgba(255,255,255,0) 70%);
 
 $color_lightHouse_top_dome: #1d2b42;
 $color_lightHouse_top_base: #16213e;

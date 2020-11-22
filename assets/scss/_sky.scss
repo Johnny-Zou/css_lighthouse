@@ -32,6 +32,7 @@
 	height: calc(60vh + 75px);
 	background: $color_sky;
 	overflow: hidden;
+	transform: translateZ(-3000px);
 
 	#starbox{
 		position: absolute;
